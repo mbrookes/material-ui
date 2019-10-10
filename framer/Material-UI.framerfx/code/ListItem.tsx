@@ -111,30 +111,6 @@ export const ListItem: React.SFC<Props> = (props: Props) => {
       break;
   }
 
-  switch (primaryAction) {
-    case 'icon':
-      primary = (
-        <MuiListItemIcon>
-          <Icon icon={primaryIcon} />
-        </MuiListItemIcon>
-      );
-      break;
-    case 'avatar':
-      primary = (
-        <MuiListItemAvatar>
-          <Avatar icon={primaryIcon} imageFile={imageFile} imageUrl={imageUrl} />
-        </MuiListItemAvatar>
-      );
-      break;
-    case 'checkbox':
-      primary = (
-        <MuiListItemIcon>
-          <MuiCheckbox edge="start" />
-        </MuiListItemIcon>
-      );
-      break;
-  }
-
   switch (secondaryAction) {
     case 'icon':
       secondary = (
