@@ -105,7 +105,7 @@ export const ListItem: React.SFC<Props> = (props: Props) => {
     case 'checkbox':
       primary = (
         <MuiListItemIcon>
-          <MuiCheckbox />
+          <MuiCheckbox edge="start" />
         </MuiListItemIcon>
       );
       break;
