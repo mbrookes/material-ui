@@ -62,6 +62,12 @@ The main point to understand is that the injected CSS is cached with the followi
 - `theme`: If you provide a new theme at each render, a new CSS object will be computed and injected. Both for UI consistency and performance, it's better to render a limited number of theme objects.
 - `styles`: The larger the styles object is, the more work is needed.
 
+### Theme preview
+
+You can provide a theme object to apply it to the documentation. (Note: imported colors are not currently supported). The theme is persisted using local storage.
+
+{{"demo": "pages/customization/theming/ThemeEditor.js", "hideHeader": true, "bg": true}}
+
 ## API
 
 ### `createMuiTheme(options, ...args) => theme`

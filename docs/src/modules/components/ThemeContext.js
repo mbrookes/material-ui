@@ -135,6 +135,16 @@ export function ThemeProvider(props) {
           ...state,
           paletteColors: themeInitialOptions.paletteColors,
         };
+      case 'SET_CUSTOM_THEME':
+        return {
+          ...state,
+          customTheme: action.payload,
+        };
+      case 'RESET_CUSTOM_THEME':
+        return {
+          ...state,
+          customTheme: {},
+        };
       case 'CHANGE':
         return {
           ...state,
@@ -150,7 +160,14 @@ export function ThemeProvider(props) {
   const userLanguage = useSelector(state => state.options.userLanguage);
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   const preferredType = prefersDarkMode ? 'dark' : 'light';
-  const { dense, direction, paletteColors, paletteType = preferredType, spacing } = themeOptions;
+  const {
+    customTheme,
+    dense,
+    direction,
+    paletteColors,
+    paletteType = preferredType,
+    spacing,
+  } = themeOptions;
 
   React.useEffect(() => {
     setPrismTheme(darkTheme);
@@ -201,6 +218,7 @@ export function ThemeProvider(props) {
       },
       dense ? highDensity : null,
       languageMap[userLanguage],
+      customTheme,
     );
 
     nextTheme.palette.background.level2 =
@@ -210,7 +228,7 @@ export function ThemeProvider(props) {
       paletteType === 'light' ? '#fff' : nextTheme.palette.grey[900];
 
     return nextTheme;
-  }, [dense, direction, paletteColors, paletteType, spacing, userLanguage]);
+  }, [customTheme, dense, direction, paletteColors, paletteType, spacing, userLanguage]);
 
   React.useEffect(() => {
     // Expose the theme as a global variable so people can play with it.
