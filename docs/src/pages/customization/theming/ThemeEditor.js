@@ -8,7 +8,7 @@ import { DispatchContext } from 'docs/src/modules/components/ThemeContext';
 // Random theme to test with
 // import editorTheme from './monokai.json';
 
-const sampleTheme = ` // Sample theme - edit or replace me!
+const sampleTheme = ` // Sample theme - try, edit or replace me!
 theme = {
   palette: {
     primary: {
@@ -58,7 +58,7 @@ function ThemeEditor(props) {
   // }, []);
 
   const [editorValue, setEditorValue] = React.useState(
-    (process.browser && localStorage.getItem('customTheme')) || sampleTheme,
+    (process.browser && localStorage.getItem('themeEditorValue')) || sampleTheme,
   );
 
   const handleChangeEditor = (event, value) => {
@@ -79,11 +79,13 @@ function ThemeEditor(props) {
         payload: eval(`(${editorValue})`),
       });
       localStorage.setItem('customTheme', editorValue);
+      localStorage.setItem('themeEditorValue', editorValue);
     }
   };
 
   const handleResetCustomTheme = () => {
     dispatch({ type: 'RESET_CUSTOM_THEME' });
+    localStorage.removeItem('customTheme');
   };
 
   return (

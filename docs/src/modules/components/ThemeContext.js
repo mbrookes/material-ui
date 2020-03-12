@@ -31,6 +31,7 @@ const themeInitialOptions = {
   direction: 'ltr',
   paletteColors: {},
   spacing: 8, // spacing unit
+  customTheme: process.browser && localStorage.getItem('customTheme') || '{}',
 };
 
 const highDensity = {
@@ -143,7 +144,7 @@ export function ThemeProvider(props) {
       case 'RESET_CUSTOM_THEME':
         return {
           ...state,
-          customTheme: {},
+          customTheme: themeInitialOptions.customTheme,
         };
       case 'CHANGE':
         return {
