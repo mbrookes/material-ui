@@ -42,6 +42,30 @@ const styles = theme => ({
   },
 });
 
+export const makeHandleChangeCustomTheme = dispatch => editorValue => {
+  console.log('makeHandleChangeCustomTheme editorValue:', editorValue);
+  let customTheme = null;
+  try {
+    customTheme = eval(`(${editorValue})`);
+  } catch (error) {
+    console.error(error);
+  }
+
+  if (typeof customTheme === 'object') {
+    dispatch({
+      type: 'SET_CUSTOM_THEME',
+      payload: eval(`(${editorValue})`),
+    });
+    localStorage.setItem('customTheme', editorValue);
+    localStorage.setItem('themeEditorValue', editorValue);
+  }
+};
+
+export const makeHandleResetCustomTheme = dispatch => () => {
+  dispatch({ type: 'RESET_CUSTOM_THEME' });
+  localStorage.removeItem('customTheme');
+};
+
 function ThemeEditor(props) {
   const { classes } = props;
   const dispatch = React.useContext(DispatchContext);
@@ -65,28 +89,8 @@ function ThemeEditor(props) {
     setEditorValue(value);
   };
 
-  const handleChangeCustomTheme = () => {
-    let customTheme = null;
-    try {
-      customTheme = eval(`(${editorValue})`);
-    } catch (error) {
-      console.error(error);
-    }
-
-    if (typeof customTheme === 'object') {
-      dispatch({
-        type: 'SET_CUSTOM_THEME',
-        payload: eval(`(${editorValue})`),
-      });
-      localStorage.setItem('customTheme', editorValue);
-      localStorage.setItem('themeEditorValue', editorValue);
-    }
-  };
-
-  const handleResetCustomTheme = () => {
-    dispatch({ type: 'RESET_CUSTOM_THEME' });
-    localStorage.removeItem('customTheme');
-  };
+  const handleChangeCustomTheme = makeHandleChangeCustomTheme(dispatch);
+  const handleResetCustomTheme = makeHandleResetCustomTheme(dispatch);
 
   return (
     <Grid container spacing={5} className={classes.root}>
@@ -108,7 +112,11 @@ function ThemeEditor(props) {
         />
       </Grid>
       <Grid item xs={12}>
-        <Button variant="contained" color="primary" onClick={handleChangeCustomTheme}>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => handleChangeCustomTheme(editorValue)}
+        >
           Set Docs Theme
         </Button>
         <Button
