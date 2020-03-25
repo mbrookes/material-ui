@@ -3,12 +3,19 @@ import kebabCase from 'lodash/kebabCase';
 import { Router as Router2 } from 'next/router';
 import { useSelector } from 'react-redux';
 import Demo from 'docs/src/modules/components/Demo';
-import { getHeaders, getContents, demoRegexp } from 'docs/src/modules/utils/parseMarkdown';
+import Customizer from 'docs/src/modules/components/Customizer';
+import {
+  getHeaders,
+  getContents,
+  demoRegexp,
+  customizerRegexp,
+} from 'docs/src/modules/utils/parseMarkdown';
 import PageContext from 'docs/src/modules/components/PageContext';
 import MarkdownElement from 'docs/src/modules/components/MarkdownElement';
 import { LANGUAGES_IN_PROGRESS, SOURCE_CODE_ROOT_URL } from 'docs/src/modules/constants';
 
 export default function useMarkdownDocs(options) {
+  console.log('options:', options);
   const {
     markdownLocation: locationProp,
     markdown: markdownProp,
@@ -136,6 +143,18 @@ ${headers.components
                 {warnIcon} Missing demo `{name}` {warnIcon}
               </div>
             );
+          }
+
+          if (name.includes('customizer')) {
+            const { js: themes } = demos[name];
+
+            if (!themes || themes.length === 0) {
+              throw new Error(
+                'Please export (default) an array with the different material-ui themes',
+              );
+            }
+
+            return <Customizer themes={themes} />;
           }
 
           return (

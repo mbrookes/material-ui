@@ -15,6 +15,8 @@ components: Button, IconButton, ButtonBase
 - Cards
 - Toolbars
 
+
+
 ## Contained Buttons
 
 [Contained buttons](https://material.io/design/components/buttons.html#contained-button)
@@ -102,6 +104,10 @@ Given that many of the interactive components rely on `ButtonBase`, you should b
 able to take advantage of it everywhere.
 
 Here is an [integration example with react-router](/guides/composition/#button).
+
+## Customization
+
+{{"demo": "pages/components/buttons/customizer.js"}}
 
 ## Limitations
 
