@@ -2,7 +2,7 @@
   "name": "feedback",
   "version": "1.0.0",
   "description": "Store and retrieve page ratings and comments",
-  "main": "index",
+  "main": "./index.js",
   "license": "MIT",
   "author": "Material-UI Team",
   "private": true,
