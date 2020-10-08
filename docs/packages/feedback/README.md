@@ -42,11 +42,12 @@ The project includes an IAM access policy that will grant the lambda function ac
 
 To set this up, first [set up the credentials](https://claudiajs.com/tutorials/installing.html#configuring-access-credentials), then:
 
-1. run `yarn install` to install the dependencies
-2. run `yarn setup` to create the lambda project under the default name on AWS.
+1. run `yarn install` (from the root workspace) to install the dependencies
+1. Navigate into the directory of this readme e.g. `cd docs/packages/feedback`
+1. run `yarn setup` to create the lambda project under the default name on AWS.
    This will also ask you for a table name for development and production.
    If you used the above AWS command, they will be `feedback-dev` and `feedback-dev` respectively.
-3. Test the API with using the [example requests below](#testing)
+1. Test the API with using the [example requests below](#testing)
 
 For subsequent updates, use the `npm run deploy` command.
 
