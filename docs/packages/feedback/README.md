@@ -40,7 +40,7 @@ The project includes an IAM access policy that will grant the lambda function ac
 
 > ⚠️ When setting up for the first time, you will need to delete the included `claudia.json` file that is specific to the MUI installation. It is only included here for ease of access.
 
-To set this up, first [set up the credentials](https://github.com/claudiajs/claudia/blob/master/getting_started.md#configuring-access-credentials), then:
+To set this up, first [set up the credentials](https://claudiajs.com/tutorials/installing.html#configuring-access-credentials), then:
 
 1. run `yarn install` to install the dependencies
 2. run `yarn setup` to create the lambda project under the default name on AWS.
