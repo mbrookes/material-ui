@@ -5,6 +5,7 @@ This Lambda function stores and retrieves page feedback using DynamoDB.
 ## Prerequisites
 
 Create an AWS profile in ~/.aws/credentials called "claudia" with credentials corresponding to an IAM user with AWSLambdaFullAccess and IAMFullAccess policies.
+You can do that with `aws configure --profile claudia`.
 
 Create a table in DynamoDB, with a `string` partition key called `id`, and a sort key called `page`. You can do that from the DynamoDB web console, or using the AWS CLI command line. Here is an example command that will create the `feedback-dev` table with the minimal provisioned throughput:
 
