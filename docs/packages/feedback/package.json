@@ -6,6 +6,9 @@
   "license": "MIT",
   "author": "Material-UI Team",
   "private": true,
+  "files": [
+    "*.js"
+  ],
   "scripts": {
     "claudia": "claudia --profile claudia",
     "curl": "curl -H \"Content-Type: application/json\" -X POST --data @example.json https://hgvi836wi8.execute-api.us-east-1.amazonaws.com/dev/rating",
