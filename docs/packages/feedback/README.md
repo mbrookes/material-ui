@@ -44,10 +44,10 @@ To set this up, first [set up the credentials](https://claudiajs.com/tutorials/i
 
 1. run `yarn install` (from the root workspace) to install the dependencies
 1. Navigate into the directory of this README, e.g. `cd docs/packages/feedback`
-1. run `yarn setup` to create the lambda project under the default name on AWS.
+1. run `yarn setup` to create the lambda function on AWS under the default name.
    This will also ask you for a table name for development and production.
    If you used the above AWS command, they will be `feedback-dev` and `feedback-dev` respectively.
-1. Test the API with using the [example requests below](#testing)
+1. Test the API using the [example requests below](#testing)
 
 For subsequent updates, use the `npm run deploy` command.
 
