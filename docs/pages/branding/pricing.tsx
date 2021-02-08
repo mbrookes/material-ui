@@ -9,25 +9,25 @@ import Avatar from '@material-ui/core/Avatar';
 
 const benefits = [
   {
-    image: '/static/branding/pricing-ssi/Path.svg',
+    image: '/static/branding/pricing-ssi/fast.svg',
     color: undefined,
     description: 'Faster development process with pre-built elements.',
     order: { xs: 1, sm: 2, lg: 1 },
   },
   {
-    image: '/static/branding/pricing-ssi/icons8-web-design.svg',
+    image: '/static/branding/pricing-ssi/customizable.svg',
     color: 'info',
     description: 'Highly customisable components.',
     order: { xs: 2, sm: 1, lg: 2 },
   },
   {
-    image: '/static/branding/pricing-ssi/icons8-trust.svg',
+    image: '/static/branding/pricing-ssi/community.svg',
     color: undefined,
     description: 'Strong community numbering 1M developers.',
     order: { xs: 3 },
   },
   {
-    image: '/static/branding/pricing-ssi/Combined Shape.svg',
+    image: '/static/branding/pricing-ssi/documentation.svg',
     color: 'info',
     description: (
       <React.Fragment>
