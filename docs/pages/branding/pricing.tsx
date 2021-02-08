@@ -31,10 +31,9 @@ const benefits = [
     color: 'info',
     description: (
       <React.Fragment>
-        {' '}
         Structured support documentation to help you{' '}
         <Box component="span" sx={{ display: { xs: 'none', md: 'block' } }} />
-        <Link href="/getting-started/usage/"> Get started.</Link>
+        <Link href="/getting-started/usage/">Get started.</Link>
       </React.Fragment>
     ),
     order: { xs: 4 },
