@@ -708,7 +708,7 @@ function BrandingSupportUs() {
         </Grid>
         <Grid item xs={12} md={6}>
           <BrandingCard
-            color="info"
+            color="vividBlue"
             icon={<FeedbackIcon fontSize="large" />}
             title="Give us feedback"
           >
@@ -726,7 +726,7 @@ function BrandingSupportUs() {
         </Grid>
         <Grid item xs={12} md={6}>
           <BrandingCard
-            color="info"
+            color="vividBlue"
             icon={<ChangesIcon fontSize="large" />}
             title="Make changes happen"
             sx={{
