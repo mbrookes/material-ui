@@ -6,6 +6,7 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Link from '@material-ui/core/Link';
 import Avatar from '@material-ui/core/Avatar';
+import BrandingBeginToday from 'docs/src/modules/branding/BrandingBeginToday';
 
 const benefits = [
   {
@@ -83,6 +84,7 @@ export default function Pricing() {
   return (
     <BrandingRoot>
       <Benefits />
+      <BrandingBeginToday />
     </BrandingRoot>
   );
 }
