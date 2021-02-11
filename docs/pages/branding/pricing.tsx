@@ -82,90 +82,6 @@ function Benefits() {
   );
 }
 
-const expectations = [
-  {
-    image: '/static/branding/pricing-ssi/fast.svg',
-    color: 'emerald',
-    title: 'Volume Discount',
-    description: (
-      <React.Fragment>
-        The licenses are on a per-developer basis. We offer the following tiered discounts from list
-        prices when purchasing more than one license for your development team:
-        <ul>
-          <li>
-            – 2-5 Licenses: <strong>10% discount</strong>
-          </li>
-          <li>
-            – 6-10 Licenses: <strong>15% discount</strong>
-          </li>
-        </ul>
-        If you require more than 10 licenses, contact us by email at{' '}
-        <Link href="mailto:sales@material-ui.com">sales@material-ui.com</Link>.
-      </React.Fragment>
-    ),
-  },
-  {
-    image: '/static/branding/pricing-ssi/customizable.svg',
-    color: 'vividBlue',
-    title: 'Perpetual License',
-    description: (
-      <React.Fragment>
-        When you purchase,{' '}
-        <strong>you are granted a license to use a version of the product in perpetuity</strong>.
-        There are no further charges until you choose to extend your license to cover newer
-        versions.
-        <br />
-        <br />
-        Please note that while the use of the software is perpetual, support and corrective
-        maintenance are not. We do not provide issue resolution to versions older than 12 months. We
-        roll bug fixes, performance enhancements, and other improvements into new releases; we don't
-        patch, fix or in any way alter older versions.
-      </React.Fragment>
-    ),
-  },
-  {
-    image: '/static/branding/pricing-ssi/community.svg',
-    color: undefined,
-    title: '1-year subscription to new versions',
-    description: (
-      <React.Fragment>
-        When you make a purchase{' '}
-        <strong>you get a subscription to license new versions for 365 days</strong>. Check the{' '}
-        <Link href="https://github.com/mui-org/material-ui-x/blob/next/CHANGELOG.md">
-          change log
-        </Link>
-        . After 1 year (or up to 5 years if you choose an extension package) you will no longer be
-        allowed to use the latest versions without renewing your subscription. You can continue to
-        use your licensed versions in perpetuity.
-        <br />
-        <br />
-        Please note that while the use of the software is perpetual, support and corrective
-        maintenance are not. We roll bug fixes, performance enhancements, and other improvements
-        into new releases; we don't patch, fix or in any way alter older versions.
-      </React.Fragment>
-    ),
-  },
-  {
-    image: '/static/branding/pricing-ssi/documentation.svg',
-    color: 'emerald',
-    title: 'Subscription Renewal',
-    description: (
-      <React.Fragment>
-        At the end of your subscription period, you will no longer be able to license the latest
-        versions or access support without renewing. This could range from 366 days up to a 5-year
-        term.{' '}
-        <strong>Renewal pricing is substantially lower than first-year subscription costs</strong>.
-        <br />
-        <br />
-        Please note that while the use of the software is perpetual, access to new features, support
-        and corrective maintenance are not. We do not provide issue resolution to versions older
-        than 12 months. We roll bug fixes, performance enhancements, and other improvements into new
-        releases; we don't patch, fix or in any way alter older versions.
-      </React.Fragment>
-    ),
-  },
-];
-
 function WhatToExpect() {
   return (
     <Container sx={{ mt: [10, 18], mb: [12, 20] }}>
@@ -175,17 +91,98 @@ function WhatToExpect() {
         from Material-UI
       </Typography>
       <Grid container spacing={3}>
-        {expectations.map((expectation) => (
-          <Grid item xs={12} md={6}>
-            <BrandingCard
-              color={expectation.color}
-              image={expectation.image}
-              title={expectation.title}
-            >
-              <Typography sx={{ mt: 2 }}>{expectation.description}</Typography>
-            </BrandingCard>
-          </Grid>
-        ))}
+        <Grid item xs={12} md={6}>
+          <BrandingCard
+            color="emerald"
+            image="/static/branding/pricing-ssi/fast.svg"
+            title="Volume Discount"
+          >
+            <Typography sx={{ mt: 2 }}>
+              The licenses are on a per-developer basis. We offer the following tiered discounts
+              from list prices when purchasing more than one license for your development team:
+              <ul>
+                <li>
+                  – 2-5 Licenses: <strong>10% discount</strong>
+                </li>
+                <li>
+                  – 6-10 Licenses: <strong>15% discount</strong>
+                </li>
+              </ul>
+              If you require more than 10 licenses, contact us by email at{' '}
+              <Link href="mailto:sales@material-ui.com">sales@material-ui.com</Link>.
+            </Typography>
+          </BrandingCard>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <BrandingCard
+            color="vividBlue"
+            image="/static/branding/pricing-ssi/customizable.svg"
+            title="Perpetual License"
+          >
+            <Typography sx={{ mt: 2 }}>
+              When you purchase,{' '}
+              <strong>
+                you are granted a license to use a version of the product in perpetuity
+              </strong>
+              . There are no further charges until you choose to extend your license to cover newer
+              versions.
+              <br />
+              <br />
+              Please note that while the use of the software is perpetual, support and corrective
+              maintenance are not. We do not provide issue resolution to versions older than 12
+              months. We roll bug fixes, performance enhancements, and other improvements into new
+              releases; we don't patch, fix or in any way alter older versions.
+            </Typography>
+          </BrandingCard>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <BrandingCard
+            image="/static/branding/pricing-ssi/community.svg"
+            title="One year subscription to new versions"
+          >
+            <Typography sx={{ mt: 2 }}>
+              When you make a purchase{' '}
+              <strong>you get a subscription to license new versions for 365 days</strong>. Check
+              the{' '}
+              <Link href="https://github.com/mui-org/material-ui-x/blob/next/CHANGELOG.md">
+                change log
+              </Link>
+              . After 1 year (or up to 5 years if you choose an extension package) you will no
+              longer be allowed to use the latest versions without renewing your subscription. You
+              can continue to use your licensed versions in perpetuity.
+              <br />
+              <br />
+              Please note that while the use of the software is perpetual, support and corrective
+              maintenance are not. We roll bug fixes, performance enhancements, and other
+              improvements into new releases; we don't patch, fix or in any way alter older
+              versions.
+            </Typography>
+          </BrandingCard>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <BrandingCard
+            color="emerald"
+            image="/static/branding/pricing-ssi/documentation.svg"
+            title="Subscription Renewal"
+          >
+            <Typography sx={{ mt: 2 }}>
+              At the end of your subscription period, you will no longer be able to license the
+              latest versions or access support without renewing. This could range from 366 days up
+              to a 5-year term.{' '}
+              <strong>
+                Renewal pricing is substantially lower than first-year subscription costs
+              </strong>
+              .
+              <br />
+              <br />
+              Please note that while the use of the software is perpetual, access to new features,
+              support and corrective maintenance are not. We do not provide issue resolution to
+              versions older than 12 months. We roll bug fixes, performance enhancements, and other
+              improvements into new releases; we don't patch, fix or in any way alter older
+              versions.
+            </Typography>
+          </BrandingCard>
+        </Grid>
       </Grid>
     </Container>
   );
